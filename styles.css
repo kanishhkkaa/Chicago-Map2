@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    margin: 0;
+}
+
+header {
+    background-color: #1a73e8;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+    border-bottom: 4px solid #1a73e8;
+}
+
+#dealer-list {
+    background-color: #fff;
+    padding: 30px 20px;
+    max-width: 900px;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+#dealer-list h2 {
+    font-size: 1.6rem;
+    color: #1a73e8;
+    margin-bottom: 20px;
+}
+
+#dealerships {
+    list-style: none;
+    padding: 0;
+}
+
+#dealerships li {
+    padding: 18px 20px;
+    background-color: #f0f4ff;
+    border-left: 4px solid #1a73e8;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+#dealerships li:hover {
+    background-color: #e3edff;
+}
+
+#dealerships li h3 {
+    margin: 0 0 8px;
+    font-size: 1.2rem;
+}
+
+#dealerships li p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+#dealerships li a {
+    display: inline-block;
+    margin-top: 8px;
+    text-decoration: none;
+    color: #1a73e8;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+#dealerships li a:hover {
+    color: #0c53b7;
+}
+
+i {
+    margin-right: 8px;
+    color: #1a73e8;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    #dealer-list {
+        padding: 20px 15px;
+    }
+}
+#search-section {
+    padding: 20px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+#search-input {
+    padding: 12px 20px;
+    width: 90%;
+    max-width: 400px;
+    border: 2px solid #1a73e8;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+#search-input:focus {
+    border-color: #0c53b7;
+    box-shadow: 0 0 8px rgba(26, 115, 232, 0.2);
+}
+
+.highlight {
+    background-color: #d1f2e2 !important;
+    border-left-color: #16a13b !important;
+    transition: background-color 0.4s, border-left-color 0.4s;
+}
+
+.highlight {
+    background-color: #d1f2e2 !important;
+    border-left-color: #34a853 !important;
+    transition: background-color 0.4s, border-left-color 0.4s;
+}
+
+#dealerships li p {
+    margin: 5px 0;
+}
+
+#dealerships li p em {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+#dealerships li p strong {
+    color: #f39c12;
+}
+#sort-section {
+    margin: 10px 0;
+    text-align: center;
+}
+
+#sort-options {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #1a73e8;
+    border-radius: 8px;
+    margin-top: 10px;
+    width: 250px;
+    outline: none;
+}
+#theme-toggle {
+    text-align: center;
+    margin: 15px 0;
+}
+
+#toggle-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#toggle-button:hover {
+    background-color: #0c53b7;
+}
+
+
+
+body.dark {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+body.dark header {
+    background-color: #0f0f0f;
+    color: #f1f1f1;
+}
+
+body.dark #map {
+    filter: grayscale(1) brightness(0.7);
+}
+
+body.dark #dealer-list {
+    background-color: #1e1e1e;
+}
+
+body.dark #dealerships li {
+    background-color: #2c2c2c;
+    border-left-color: #f1f1f1;
+}
+
+body.dark a {
+    color: #90caf9;
+}
+
+body.dark #search-input,
+body.dark #sort-options {
+    background-color: #2c2c2c;
+    color: #f1f1f1;
+    border-color: #555;
+}
+
+body.dark #search-input::placeholder {
+    color: #aaa;
+}
