@@ -41,8 +41,6 @@ function initMap() {
     });
 
     renderDealerships(dealerships);
-
-    // 🔍 Search Feature
     document.getElementById("search-input").addEventListener("input", (e) => {
         const keyword = e.target.value.toLowerCase();
         const filtered = dealerships.filter(d =>
@@ -56,8 +54,6 @@ function initMap() {
     const sortType = e.target.value;
     applySort(sortType);
 });
-
-    // 📍 Geolocation Feature
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
             const userLocation = {
@@ -119,12 +115,11 @@ function getStars(rating) {
         stars += '<i class="fas fa-star" style="color: #f39c12;"></i> ';
     }
 
-    // Half star
     if (halfStar) {
         stars += '<i class="fas fa-star-half-alt" style="color: #f39c12;"></i> ';
     }
 
-    // Empty stars
+
     const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
     for (let i = 0; i < emptyStars; i++) {
         stars += '<i class="far fa-star" style="color: #f39c12;"></i> ';
@@ -142,25 +137,19 @@ function highlightNearest(userLocation) {
             originalIndex: index // Track original index
         };
     });
-
-    // Sort by distance ascending
     distances.sort((a, b) => a.distance - b.distance);
-
-    // Highlight nearest one (smallest distance)
     if (markers[distances[0].originalIndex]) {
         markers[distances[0].originalIndex].setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
         markers[distances[0].originalIndex].setAnimation(google.maps.Animation.BOUNCE);
         setTimeout(() => markers[distances[0].originalIndex].setAnimation(null), 2500);
     }
-
-    // 🆕 Now render sorted dealership list
     renderSortedDealerships(distances);
 }
 
 
 
 function renderSortedDealerships(sortedList) {
-    // Clear previous markers and list
+  
     markers.forEach(marker => marker.setMap(null));
     markers = [];
 
@@ -235,8 +224,6 @@ function getDistance(coord1, coord2) {
 function toRad(deg) {
     return deg * Math.PI / 180;
 }
-
-//  Google Maps api
 (function loadGoogleMaps() {
     const apiKey = 'AIzaSyDvnqyKvHMp8zO2CAgZVGfHji7qH9X_gIc';
     const script = document.createElement('script');
@@ -245,7 +232,6 @@ function toRad(deg) {
     script.defer = true;
     document.head.appendChild(script);
 })();
-// 🌙 Toggle Dark Mode
 document.getElementById("toggle-button").addEventListener("click", () => {
     document.body.classList.toggle("dark");
 });
