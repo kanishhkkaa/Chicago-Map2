@@ -110,7 +110,6 @@ function getStars(rating) {
     const fullStars = Math.floor(rating);
     const halfStar = rating % 1 >= 0.5;
 
-    // Full stars
     for (let i = 0; i < fullStars; i++) {
         stars += '<i class="fas fa-star" style="color: #f39c12;"></i> ';
     }
@@ -235,7 +234,12 @@ function toRad(deg) {
 document.getElementById("toggle-button").addEventListener("click", () => {
     document.body.classList.toggle("dark");
 });
-
+fetch('http://localhost:5000/api/dealerships')
+  .then(res => res.json())
+  .then(data => {
+    console.log(data); // Show MongoDB data
+  })
+  .catch(err => console.error(err));
 
    // script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCpEt4-hvsOdxURoPI8Gd3yKnYvg1w0oXk&callback=initMap`;
   // AIzaSyAU6zOS7KAiVaSkGeTUuHRwNd0L-IFWUNk
